@@ -1,0 +1,48 @@
+@font-face {
+    font-family: ali ;
+    src: url(Barlow_Condensed/BarlowCondensed-ExtraBold.ttf);
+}
+@font-face {
+    font-family: ali-normal;
+    src: url(Barlow_Condensed/BarlowCondensed-SemiBold.ttf);
+}
+
+$primarycol:#350661;
+
+body{
+    font-family: ali-normal;
+}
+
+h1,h3{
+    font-family: ali !important;
+    letter-spacing: 2px;
+}
+
+h1::first-letter{
+font-size: 70px
+}
+
+span{
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    font-size: 60px;
+}
+
+#typing{
+    color: $primarycol;
+}
+
+.newbtn{
+    background-color:$primarycol!important; 
+    color: white !important;
+    font-size: 20px !important;
+    padding: 4px 40px !important;
+}
+
+.modal-footer{
+    border: none !important;
+}
+
+.icon{
+    color: black;
+}
