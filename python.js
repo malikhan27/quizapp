@@ -1,4 +1,4 @@
-// var pythonQuiz = [
+
 //     {
 //       question: "HTML Stands for ?",
 //       option1: "Hypertext",

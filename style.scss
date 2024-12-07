@@ -48,3 +48,12 @@ span{
 .icon{
     color: black;
 }
+
+@media  screen and (max-width:500px) {
+    span{
+        letter-spacing: 4px;
+        word-spacing: 4px;
+        font-size: 20px !important;
+        color: rgb(141, 198, 63);
+    }
+}
