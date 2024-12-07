@@ -144,3 +144,23 @@ h1::first-letter{
     height: 100px;
     border-radius: 50%;
 }
+
+.right{
+    color: green;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.wrong{
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.question{
+    color:#043369 ;
+    font-weight: 600;
+    font-size: 30px;
+    word-spacing: 4px;
+    letter-spacing: 2px;
+}
