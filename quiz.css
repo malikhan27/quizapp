@@ -81,6 +81,13 @@ h1::first-letter{
     color: #555;
 }
 
+.option label:hover {
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000000;
+}
+
 .submit-btn {
     background-color: #4c7aaf;
     color: white;
@@ -96,3 +103,44 @@ h1::first-letter{
     background-color: #5993b4;
 }
 
+
+.results-container {
+    width: 75%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#remarks{
+    font-size: 40px;
+}
+
+.passed{
+    color: darkgreen;
+    font-weight: bolder;
+}
+.failed{
+    color: rgb(165, 4, 4);
+    font-weight: bolder;
+}
+
+.results-container h2 {
+    margin-bottom: 20px;
+}
+.results-container p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.result-stat {
+    font-weight: bold;
+}
+
+#percentage{
+    border: 2px solid ;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}

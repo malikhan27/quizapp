@@ -40,53 +40,53 @@ var htmlQuiz = [
       option4: "style",
       answer: "bgcolor",
     },
-    {
-      question: "What is the correct HTML element for inserting a line break?",
-      option1: "break",
-      option2: "br",
-      option3: "hr",
-      option4: "line",
-      answer: "br",
-    },
-    {
-      question: "Which tag is used for creating an ordered list in HTML?",
-      option1: "ul",
-      option2: "li",
-      option3: "ol",
-      option4: "dl",
-      answer: "ol",
-    },
-    {
-      question: "Which tag is used to define a table in HTML?",
-      option1: "table",
-      option2: "tr",
-      option3: "td",
-      option4: "thead",
-      answer: "table",
-    },
-    {
-      question: "Which HTML tag is used to display a form in a webpage?",
-      option1: "input",
-      option2: "form",
-      option3: "button",
-      option4: "textarea",
-      answer: "form",
-    },
-    {
-      question:
-        "What is the default value of the type attribute for an <input> tag in HTML?",
-      option1: "text",
-      option2: "password",
-      option3: "checkbox",
-      option4: "radio",
-      answer: "text",
-    },
+    // {
+    //   question: "What is the correct HTML element for inserting a line break?",
+    //   option1: "break",
+    //   option2: "br",
+    //   option3: "hr",
+    //   option4: "line",
+    //   answer: "br",
+    // },
+    // {
+    //   question: "Which tag is used for creating an ordered list in HTML?",
+    //   option1: "ul",
+    //   option2: "li",
+    //   option3: "ol",
+    //   option4: "dl",
+    //   answer: "ol",
+    // },
+    // {
+    //   question: "Which tag is used to define a table in HTML?",
+    //   option1: "table",
+    //   option2: "tr",
+    //   option3: "td",
+    //   option4: "thead",
+    //   answer: "table",
+    // },
+    // {
+    //   question: "Which HTML tag is used to display a form in a webpage?",
+    //   option1: "input",
+    //   option2: "form",
+    //   option3: "button",
+    //   option4: "textarea",
+    //   answer: "form",
+    // },
+    // {
+    //   question:
+    //     "What is the default value of the type attribute for an <input> tag in HTML?",
+    //   option1: "text",
+    //   option2: "password",
+    //   option3: "checkbox",
+    //   option4: "radio",
+    //   answer: "text",
+    // },
   ];
   
   var questionNo=1
   var questionCount = 0;
   var score = 0;
-  var quizDiv=document.getElementById('quiz-div')
+  var quizDiv=document.getElementById('main')
   var quizOptions=document.getElementsByName('option')
 
   function renderQuestion(){
@@ -155,6 +155,39 @@ var htmlQuiz = [
         questionCount++;
         deSelect();
         renderQuestion();
+      }else{
+        resultWindow()
       }
+    }
+}
+
+
+
+
+function resultWindow(){
+    var percentage = Math.round(score/htmlQuiz.length*100)
+    
+
+    quizDiv.innerHTML= `<div class="results-container d-flex flex-column align-items-center">
+    <h2>Quiz Results</h2>
+    <span class="none" id="remarks"></span>
+    <p>Total Questions: <span class="result-stat" id="total-questions">${htmlQuiz.length}</span></p>
+    <p>Correct Answers: <span class="result-stat" id="correct-answers">${score}</span></p>
+    <p class="mt-5 w-100 h-100"><b>Percentage<b></p> 
+    <div class="result-stat text-center d-flex flex-column align-items-center justify-content-center" id="percentage">${percentage}%</div>
+</div>`
+var remarkelement=document.getElementById("remarks")
+if(percentage<70){
+    remarkelement.innerHTML="FAILED! BETTER LUCK NEXT TIME";
+    remarkelement.className="failed"
+    document.getElementById('percentage').classList.add("failed")
+
+}
+    else{
+    remarkelement.innerHTML='PASSED! CONGRATULATIONS';
+    remarkelement.className="passed"
+     document.getElementById('percentage').classList.add("passed")
+
+
     }
 }
