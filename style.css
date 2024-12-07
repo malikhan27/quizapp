@@ -4,15 +4,16 @@
 }
 @font-face {
   font-family: ali-normal;
-  src: url(Barlow_Condensed/BarlowCondensed-SemiBold.ttf);
+  src: url(Barlow_Condensed/BarlowCondensed-Medium.ttf);
 }
-* {
+body {
   font-family: ali-normal;
 }
 
 h1, h3 {
   font-family: ali !important;
   letter-spacing: 2px;
+  color: #043369 !important;
 }
 
 h1::first-letter {
@@ -22,15 +23,16 @@ h1::first-letter {
 span {
   letter-spacing: 4px;
   word-spacing: 4px;
-  font-size: 60px;
+  font-size: 50px;
+  color: rgb(141, 198, 63);
 }
 
 #typing {
-  color: #350661;
+  color: #043369;
 }
 
 .newbtn {
-  background-color: #350661 !important;
+  background-color: #043369 !important;
   color: white !important;
   font-size: 20px !important;
   padding: 4px 40px !important;

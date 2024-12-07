@@ -25,7 +25,7 @@ function windowchange() {
      </tr>
      <tr>
        <td>TOTAL QUESTIONS</td>
-       <td colspan="3">10</td>
+       <td colspan="3">15</td>
      </tr>
      <tr>
        <td>TIME</td>
@@ -37,7 +37,7 @@ function windowchange() {
      </tr>
     </tbody>
    </table>
-   <a class="btn btn-primary" href=""></a>
+   <a class="btn" style="background-color: #043369 !important; color:white !important" href="quiz.html">Join Now</a>
       </div>
     </div>
   </div>
@@ -69,7 +69,7 @@ function windowchange() {
      </tr>
     </tbody>
    </table>
-   <a class="btn btn-danger" style="background-color:"#350661"!important; color:"white !important"" href="">Join Now</a>
+   <a class="btn" style="background-color: #043369 !important; color:white !important" href="">Join Now</a>
       </div>
     </div>
   </div>

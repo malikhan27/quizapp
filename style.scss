@@ -4,10 +4,10 @@
 }
 @font-face {
     font-family: ali-normal;
-    src: url(Barlow_Condensed/BarlowCondensed-SemiBold.ttf);
+    src: url(Barlow_Condensed/BarlowCondensed-Medium.ttf);
 }
 
-$primarycol:#350661;
+$primarycol:#043369;
 
 body{
     font-family: ali-normal;
@@ -16,6 +16,7 @@ body{
 h1,h3{
     font-family: ali !important;
     letter-spacing: 2px;
+    color: #043369 !important;
 }
 
 h1::first-letter{
@@ -25,7 +26,8 @@ font-size: 70px
 span{
     letter-spacing: 4px;
     word-spacing: 4px;
-    font-size: 60px;
+    font-size: 50px;
+    color: rgb(141, 198, 63);
 }
 
 #typing{
