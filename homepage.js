@@ -6,7 +6,7 @@ function windowchange() {
   divelement.innerHTML = `
 
 <div class="mt-2 p-3" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
-  <h1 style="display:Inline;" class="ms-5">WEB AND APP DEVELOPMENT </h1> <span> (2 Subjects) </span>
+  <h1 style="display:Inline;" class="ms-md-5">WEB AND APP DEVELOPMENT </h1> <span> (2 Subjects) </span>
 </div>
 
 <div class="accordion w-75 accordion-flush mt-4" id="accordionFlushExample">
@@ -83,7 +83,7 @@ function windowchangepython() {
   divelement.innerHTML = `
 
 <div class="mt-2 p-3" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
-  <h1 style="display:Inline;" class="ms-5">PYTHON</h1> <span> (1 Subjects) </span>
+  <h1 style="display:Inline;" class="ms-md-5">PYTHON</h1> <span> (1 Subjects) </span>
 </div>
 
 <div class="accordion w-75 accordion-flush mt-4" id="accordionFlushExample">
@@ -128,7 +128,7 @@ function windowchangemodule() {
   divelement.innerHTML = `
 
 <div class="mt-2 p-3" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
-  <h1 style="display:Inline;" class="ms-5">MODULE-1</h1> <span> (3 Subjects) </span>
+  <h1 style="display:Inline;" class="ms-md-5">MODULE-1</h1> <span> (3 Subjects) </span>
 </div>
 
 <div class="accordion w-75 accordion-flush mt-4" id="accordionFlushExample">
