@@ -2,6 +2,7 @@ var divelement = document.getElementById("main-div");
 console.log(divelement);
 
 function windowchange() {
+  document.getElementById("logout").href="homepage.html"
   divelement.innerHTML = `
 
 <div class="mt-2 p-3" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
@@ -78,10 +79,11 @@ function windowchange() {
 }
 
 function windowchangepython() {
+  document.getElementById("logout").href="homepage.html"
   divelement.innerHTML = `
 
 <div class="mt-2 p-3" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
-  <h1 style="display:Inline;" class="ms-5">PYTHON</h1> <span> (2 Subjects) </span>
+  <h1 style="display:Inline;" class="ms-5">PYTHON</h1> <span> (1 Subjects) </span>
 </div>
 
 <div class="accordion w-75 accordion-flush mt-4" id="accordionFlushExample">
@@ -122,10 +124,11 @@ function windowchangepython() {
 }
 
 function windowchangemodule() {
+  document.getElementById("logout").href="homepage.html"
   divelement.innerHTML = `
 
 <div class="mt-2 p-3" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
-  <h1 style="display:Inline;" class="ms-5">MODULE-1</h1> <span> (2 Subjects) </span>
+  <h1 style="display:Inline;" class="ms-5">MODULE-1</h1> <span> (3 Subjects) </span>
 </div>
 
 <div class="accordion w-75 accordion-flush mt-4" id="accordionFlushExample">
@@ -228,3 +231,11 @@ function windowchangemodule() {
  
 `;
 }
+
+
+
+
+
+function noBack() {
+    window.history.forward();}
+noBack()

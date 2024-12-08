@@ -62,30 +62,39 @@ function logintowindow(){
                 }else{
                     Swal.fire({
                         icon: "error",
-                        title: "ERROR",
-                        text: "Incorrect Password"
+                        title: "Oops...",
+                        text: "Enter a correct password!",
+                        footer: '<a href="#">Why do I have this issue?</a>'
                       });
                 }
             }else{
                 Swal.fire({
                     icon: "error",
-                    title: "ERROR",
-                    text: "Incorrect Email"
+                    title: "Oops...",
+                    text: "Enter a Correct Email!",
+                    footer: '<a href="#">Why do I have this issue?</a>'
                   });
             }
-        }else{Swal.fire({
-            icon: "error",
-            title: "ERROR",
-            text: "Empty field"
-          });
-
-    
         }
+        else{
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "empty filed!",
+                footer: '<a href="#">Why do I have this issue?</a>'
+              });
+           }
     }else{
         Swal.fire({
             icon: "error",
-            title: "ERROR",
-            text: "Empty field"
+            title: "Oops...",
+            text: "empty field!",
+            footer: '<a href="#">Why do I have this issue?</a>'
           });
     }
 }
+
+
+function noBack() {
+    window.history.forward();}
+noBack()

@@ -10,6 +10,11 @@ body {
   font-family: ali-normal;
 }
 
+.middle-div {
+  margin-top: 12.5%;
+  margin-bottom: 12.5%;
+}
+
 h1, h3 {
   font-family: ali !important;
   letter-spacing: 2px;

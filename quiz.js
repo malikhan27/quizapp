@@ -155,7 +155,7 @@ var htmlQuiz = [
             <label class="w-100 h-100" for="option4">${htmlQuiz[questionCount].option4}</label>
         </div>
 
-        <button onclick="nextQuestion()" class="submit-btn mt-2 me-1">Next</button>
+        <button onclick="nextQuestion()" class="submit-btn mt-2">Next</button>
     </div>`
   }
 

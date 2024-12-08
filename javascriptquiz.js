@@ -144,7 +144,7 @@ var jsQuiz = [
         option1: "==",
         option2: "===",
         option3: "!=",
-        option4: "<>",
+        option4: ":'",
         answer: "===",
     },
     {
@@ -277,7 +277,7 @@ var jsQuiz = [
             <label class="w-100 h-100" for="option4">${jsQuiz[questionCount].option4}</label>
         </div>
 
-        <button onclick="nextQuestion()" class="submit-btn mt-2 me-1">Next</button>
+        <button onclick="nextQuestion()" class="submit-btn mt-2">Next</button>
     </div>`
   }
 
