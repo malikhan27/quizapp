@@ -12,7 +12,7 @@ document.getElementById('heading').classList.add("w-100","text-center","me-2")
     <p class="mt-5 w-100 h-100">Percentage</p> 
     <div class="result-stat text-center d-flex flex-column align-items-center justify-content-center mt-2" id="percentage">${getresultinfo.userpercentage}%</div>
     <button onclick=" wrongQuestionswindow()" class="mt-3 btn" style="background-color:#043369; color:white">REVIEW YOUR WRONG ANSWER</button>
-    <button onclick=" wrongQuestionswindow()" class="mt-3 btn" style="background-color:#043369; color:white">Back to main</button>
+    <button onclick=" gobackHome()" class="mt-3 btn" style="background-color:#043369; color:white">Back to main</button>
 
   </div>`
 var remarkelement=document.getElementById("remarks")
@@ -32,7 +32,7 @@ if(getresultinfo.userpercentage<70){
 
     
 function wrongQuestionswindow(){
- 
+ document.getElementById("resultbutton").classList.remove("d-none")
   var wrongquestions=localStorage.getItem("wrongquestionlist")
   var wrongquestionarray=JSON.parse(wrongquestions)
 
@@ -55,3 +55,15 @@ function wrongQuestionswindow(){
 }
 
   }
+
+  history.pushState(null, null, location.href);
+window.onpopstate = function () {
+    history.go(1)}
+
+function gobackHome(){
+  window.location.href="homepage.html"
+}
+
+function gobackresult(){
+  window.location.href="result.html"
+}

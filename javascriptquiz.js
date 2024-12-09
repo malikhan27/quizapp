@@ -226,26 +226,10 @@ function resultWindow(){
   window.location.href="result.html"
 }
 
-function wrongQuestionswindow(){
-  if(wrongquestions.length!==0){
-  quizDiv.classList.add("d-none")
-  document.getElementById('heading').innerHTML= '<h1>HTML & CSS <br> Wrong Answers Review</h1>'
-  for(i=0;i<wrongquestions.length;i++){
-   document.getElementById("list-ol").innerHTML+=`<li class="mt-3">
-   <span class="question"> ${wrongquestions[i].wrongquestion} </span><br> <span class="wrong">
-  ${wrongquestions[i].wronganswer} </span> <br> <span class="right">${wrongquestions[i].rightanswer}</span>
-   </li>`
-    
-  }
-}else{
-  Swal.fire({
-    title: "You have got 100%",
-    text: "YOU HAVE'NT DONE ANY QUESTION WRONG",
-    icon: "success",
-  });
-}
 
-  }
+function noBack() {
+  window.history.forward();}
+noBack()
   
 
  

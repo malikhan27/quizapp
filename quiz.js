@@ -232,5 +232,5 @@ function resultWindow(){
 
   
 function noBack() {
-  window.history.forward("index.html");}
+  window.history.forward();}
 noBack()
