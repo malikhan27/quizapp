@@ -245,6 +245,10 @@ document.getElementById("name1").innerHTML=
 `
 ${information.Name}
 `
+document.getElementById("username").innerHTML=
+`
+${information.Name}
+`
 
 function noBack() {
     window.history.forward();}
