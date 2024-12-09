@@ -230,6 +230,6 @@ function resultWindow(){
 function noBack() {
   window.history.forward();}
 noBack()
-  
+
 
  

@@ -230,4 +230,6 @@ function resultWindow(){
 function noBack() {
   window.history.forward();}
 noBack()
-  
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+    history.go(1)}
