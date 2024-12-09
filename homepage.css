@@ -17,6 +17,12 @@ h1,h2{
     }
     color:  #043369 !important;
     font-family: ali !important;
+    span{
+        font-family: ali !important;
+        font-weight: bolder;
+        text-transform: capitalize
+        ;
+    }
 }
 
 h1::first-letter{
