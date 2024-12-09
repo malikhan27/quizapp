@@ -4,11 +4,14 @@ var signupusername=document.getElementById('name')
 
 var email= ""
 var password=""
-
+var name=""
 var loginEmail=document.getElementById("Emaillogin")
 var loginPassword=document.getElementById("Passwordlogin")
 var useremail
 var userpassword
+var userinfo
+var information
+
 
 
 
@@ -17,6 +20,16 @@ var userpassword
 function signupAccount(){
     email=signupEmail.value
     password=signupPassword.value
+    name=signupusername.value
+    userinfo={
+        Name:name,
+        Email:email,
+        Password:password,
+    }
+    userinfo=JSON.stringify(userinfo)
+
+    localStorage.setItem("information",userinfo)
+
     if(signupusername.value.trim()!==""){
     if(email.trim()!==""){
         if(password.trim()!==""){
@@ -50,14 +63,21 @@ function signupAccount(){
    
 } 
 
+
+
 function logintowindow(){
+    information=localStorage.getItem("information")
+    information=JSON.parse(information)
+
     useremail=loginEmail.value
     userpassword=loginPassword.value
 
+    
+
     if(useremail.trim()!==""){
         if(userpassword.trim()!==""){
-            if(useremail===email){
-                if(userpassword===password){
+            if(information.Email===useremail){
+                if(information.Password===userpassword){
                     window.location.href="homepage.html"
                 }else{
                     Swal.fire({

@@ -1,6 +1,7 @@
 var divelement = document.getElementById("main-div");
 console.log(divelement);
 
+
 function windowchange() {
   document.getElementById("logout").href="homepage.html"
   divelement.innerHTML = `
@@ -58,7 +59,7 @@ function windowchange() {
      </tr>
      <tr>
        <td>TOTAL QUESTIONS</td>
-       <td colspan="3">10</td>
+       <td colspan="3">15</td>
      </tr>
      <tr>
        <td>TIME</td>
@@ -180,7 +181,7 @@ function windowchangemodule() {
      </tr>
      <tr>
        <td>TOTAL QUESTIONS</td>
-       <td colspan="3">10</td>
+       <td colspan="3">15s</td>
      </tr>
      <tr>
        <td>TIME</td>
@@ -232,9 +233,18 @@ function windowchangemodule() {
 `;
 }
 
+var name=localStorage.getItem("information")
+var information=JSON.parse(name)
+console.log(information) 
 
-
-
+document.getElementById("name").innerHTML=
+`
+${information.Name}
+`
+document.getElementById("name1").innerHTML=
+`
+${information.Name}
+`
 
 function noBack() {
     window.history.forward();}
