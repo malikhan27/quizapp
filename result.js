@@ -56,9 +56,7 @@ function wrongQuestionswindow(){
 
   }
 
-  function noBack() {
-    window.history.forward();}
-  noBack()
+ 
 
 function gobackHome(){
   window.location.href="homepage.html"
@@ -67,3 +65,7 @@ function gobackHome(){
 function gobackresult(){
   window.location.href="result.html"
 }
+
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+    history.go(1)}
