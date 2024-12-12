@@ -128,6 +128,7 @@ var pythonQuiz = [
   var quizDiv=document.getElementById('main')
   var quizOptions=document.getElementsByName('option')
   var wrongquestions=new Array
+  var resultinfo
 
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
@@ -158,7 +159,17 @@ var pythonQuiz = [
     </div>`
   }
 
-  window.onload= renderQuestion()
+  var getresultinfo=localStorage.getItem("resultinformation")
+    getresultinfo=JSON.parse(getresultinfo);
+
+
+function quizattendancecheck(){
+    if(getresultinfo.quizName==="PYTHON"){
+      window.location.href="result.html"
+    }else{
+      renderQuestion()
+    }
+  }
 
   function deSelect() {
     for (var i = 0; i < quizOptions.length; i++) {
@@ -218,7 +229,8 @@ function resultWindow(){
   resultinfo={
     Total:pythonQuiz.length,
     Usermarks:score,
-    userpercentage:percentage
+    userpercentage:percentage,
+    quizName:"PYTHON"
     }
     localStorage.setItem("resultinformation",JSON.stringify(resultinfo))
 
@@ -227,6 +239,4 @@ function resultWindow(){
 }
 
 
-function noBack() {
-  window.history.forward();}
-noBack()
+window.onload= quizattendancecheck()

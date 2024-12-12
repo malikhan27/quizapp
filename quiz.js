@@ -160,8 +160,7 @@ var htmlQuiz = [
     </div>`
   }
 
-  window.onload= renderQuestion()
-
+  
   function deSelect() {
     for (var i = 0; i < quizOptions.length; i++) {
       quizOptions[i].checked = false;
@@ -220,7 +219,8 @@ function resultWindow(){
     resultinfo={
       Total:htmlQuiz.length,
       Usermarks:score,
-      userpercentage:percentage
+      userpercentage:percentage,
+      quizName:"HTML AND CSS"
       }
       localStorage.setItem("resultinformation",JSON.stringify(resultinfo))
 
@@ -229,8 +229,25 @@ function resultWindow(){
     
 }
 
+var getresultinfo=localStorage.getItem("resultinformation")
+    getresultinfo=JSON.parse(getresultinfo);
+
+function quizattendancecheck(){
+  if(getresultinfo.quizName==="HTML AND CSS"){
+    window.location.href="result.html"
+  }else{
+    renderQuestion()
+  }
+}
 
 
 function noBack() {
   window.history.forward();}
 noBack()
+
+var getresultinfo=localStorage.getItem("resultinformation")
+    getresultinfo=JSON.parse(getresultinfo);
+
+
+
+window.onload= quizattendancecheck()

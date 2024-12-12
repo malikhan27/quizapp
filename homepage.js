@@ -249,10 +249,19 @@ document.getElementById("username").innerHTML=
 `
 ${information.Name}
 `
+function unablebackfrommainpage(){ 
+  var getpagelocation=localStorage.getItem("location")
+  if(getpagelocation==="mainpage"){
+  window.location.href="index.html"}
+}
 
-function noBack() {
-    window.history.forward();}
-noBack()
-history.pushState(null, null, location.href);
-window.onpopstate = function () {
-    history.go(1)}
+
+window.onload= unablebackfrommainpage()
+
+
+// function noBack() {
+//     window.history.forward();}
+// noBack()
+// history.pushState(null, null, location.href);
+// window.onpopstate = function () {
+//     history.go(1)}

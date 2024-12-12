@@ -11,7 +11,15 @@ var useremail
 var userpassword
 var userinfo
 var information
+var pagedirectiontomain
+var getpagelocation
 
+function mainpage(){
+    pagedirectiontomain= localStorage.setItem("location","mainpage")
+    getpagelocation=localStorage.getItem("location")
+
+}
+ 
 
 
 
@@ -68,6 +76,7 @@ function signupAccount(){
 function logintowindow(){
     information=localStorage.getItem("information")
     information=JSON.parse(information)
+    pagedirectiontomain= localStorage.setItem("location","anypage")
 
     useremail=loginEmail.value
     userpassword=loginPassword.value
@@ -114,10 +123,5 @@ function logintowindow(){
     }
 }
 
+mainpage()
 
-function noBack() {
-    window.history.forward();}
-noBack()
-history.pushState(null, null, location.href);
-window.onpopstate = function () {
-    history.go(1)}
