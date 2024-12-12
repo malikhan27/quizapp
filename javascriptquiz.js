@@ -165,8 +165,6 @@ var jsQuiz = [
   function quizattendancecheck(){
     if(getresultinfo.quizName==="JAVASCRIPT"){
       window.location.href="result.html"
-    }else{
-      renderQuestion()
     }
   }
 
@@ -241,3 +239,4 @@ function resultWindow(){
 
 
 window.onload=quizattendancecheck()
+renderQuestion()

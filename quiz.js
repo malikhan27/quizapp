@@ -235,8 +235,6 @@ var getresultinfo=localStorage.getItem("resultinformation")
 function quizattendancecheck(){
   if(getresultinfo.quizName==="HTML AND CSS"){
     window.location.href="result.html"
-  }else{
-    renderQuestion()
   }
 }
 
@@ -249,5 +247,5 @@ var getresultinfo=localStorage.getItem("resultinformation")
     getresultinfo=JSON.parse(getresultinfo);
 
 
-
+renderQuestion()
 window.onload= quizattendancecheck()

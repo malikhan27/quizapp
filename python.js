@@ -166,8 +166,6 @@ var pythonQuiz = [
 function quizattendancecheck(){
     if(getresultinfo.quizName==="PYTHON"){
       window.location.href="result.html"
-    }else{
-      renderQuestion()
     }
   }
 
@@ -238,5 +236,5 @@ function resultWindow(){
   window.location.href="result.html"
 }
 
-
+renderQuestion()
 window.onload= quizattendancecheck()
