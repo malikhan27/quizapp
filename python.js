@@ -128,7 +128,7 @@ var pythonQuiz = [
   var quizDiv=document.getElementById('main')
   var quizOptions=document.getElementsByName('option')
   var wrongquestions=new Array
-  var resultinfo
+  var resultinfo={quizName:""}
 
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
