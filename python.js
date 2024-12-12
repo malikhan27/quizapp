@@ -128,7 +128,8 @@ var pythonQuiz = [
   var quizDiv=document.getElementById('main')
   var quizOptions=document.getElementsByName('option')
   var wrongquestions=new Array
-  var resultinfo={quizName:""}
+  var resultinfo;
+  var quizname;
 
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
@@ -159,12 +160,10 @@ var pythonQuiz = [
     </div>`
   }
 
-  var getresultinfo=localStorage.getItem("resultinformation")
-    getresultinfo=JSON.parse(getresultinfo);
+  quizname=localStorage.getItem("quizname")
 
-
-function quizattendancecheck(){
-    if(getresultinfo.quizName==="PYTHON"){
+  function quizattendancecheck(){
+    if(quizname==="PYTHON"){
       window.location.href="result.html"
     }
   }
@@ -222,6 +221,8 @@ function quizattendancecheck(){
 
 
 function resultWindow(){
+  
+  localStorage.setItem("quizname","PYTHON")
   localStorage.setItem("wrongquestionlist",JSON.stringify(wrongquestions))
   var percentage = Math.round(score/pythonQuiz.length*100)
   resultinfo={

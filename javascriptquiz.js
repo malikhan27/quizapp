@@ -128,7 +128,7 @@ var jsQuiz = [
   var quizDiv=document.getElementById('main')
   var quizOptions=document.getElementsByName('option')
   var wrongquestions=new Array;
-  var resultinfo={quizName:""}
+  var quizname
 
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
@@ -159,11 +159,12 @@ var jsQuiz = [
     </div>`
   }
 
-  var getresultinfo=localStorage.getItem("resultinformation")
-  getresultinfo=JSON.parse(getresultinfo);
+  
+
+  quizname=localStorage.getItem("quizname")
 
   function quizattendancecheck(){
-    if(getresultinfo.quizName==="JAVASCRIPT"){
+    if(quizname==="JAVASCRIPT"){
       window.location.href="result.html"
     }
   }
@@ -222,13 +223,14 @@ var jsQuiz = [
 
 
 function resultWindow(){
+  
+  localStorage.setItem("quizname","JAVASCRIPT")
   localStorage.setItem("wrongquestionlist",JSON.stringify(wrongquestions))
   var percentage = Math.round(score/jsQuiz.length*100)
   resultinfo={
     Total:jsQuiz.length,
     Usermarks:score,
     userpercentage:percentage,
-    quizName:"JAVASCRIPT"
 
     }
     localStorage.setItem("resultinformation",JSON.stringify(resultinfo))

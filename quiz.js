@@ -129,7 +129,8 @@ var htmlQuiz = [
   var quizDiv=document.getElementById('main')
   var quizOptions=document.getElementsByName('option')
   var wrongquestions=new Array;
-  var resultinfo={quizName:""}
+  var resultinfo;
+  var quizname
 
 
   function renderQuestion(){
@@ -213,7 +214,7 @@ var htmlQuiz = [
 
 
 function resultWindow(){
-
+  localStorage.setItem("quizname","HTML AND CSS")
   localStorage.setItem("wrongquestionlist",JSON.stringify(wrongquestions))
     quizname=localStorage.setItem("quizname","HTML AND CSS")
     var percentage = Math.round(score/htmlQuiz.length*100)
@@ -221,7 +222,6 @@ function resultWindow(){
       Total:htmlQuiz.length,
       Usermarks:score,
       userpercentage:percentage,
-      quizName:"HTML AND CSS"
       }
       localStorage.setItem("resultinformation",JSON.stringify(resultinfo))
 
@@ -230,11 +230,10 @@ function resultWindow(){
     
 }
 
-var getresultinfo=localStorage.getItem("resultinformation")
-    getresultinfo=JSON.parse(getresultinfo);
+  quizname=localStorage.getItem("quizname")
 
 function quizattendancecheck(){
-  if(getresultinfo.quizName==="HTML AND CSS"){
+  if(quizname==="HTML AND CSS"){
     window.location.href="result.html"
   }
 }

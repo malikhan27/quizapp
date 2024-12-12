@@ -1,9 +1,10 @@
 var resultdiv=document.getElementById('main2')
 var getresultinfo=localStorage.getItem("resultinformation")
+var quizname=localStorage.getItem("quizname")
     getresultinfo=JSON.parse(getresultinfo)
     console.log(getresultinfo)
 document.getElementById('heading').classList.add("w-100","text-center","me-2")
-    document.getElementById('heading').innerHTML= `<h1>${getresultinfo.quizName} Quiz Result</h1>`
+    document.getElementById('heading').innerHTML= `<h1>${quizname} Quiz Result</h1>`
     resultdiv.innerHTML= `
   <div class="results-container d-flex flex-column align-items-center">
     <span class="none" id="remarks"></span>
@@ -66,6 +67,5 @@ function gobackresult(){
   window.location.href="result.html"
 }
 
-history.pushState(null, null, location.href);
-window.onpopstate = function () {
-    history.go(1)}
+
+
