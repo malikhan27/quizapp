@@ -128,9 +128,10 @@ var htmlQuiz = [
   var score = 0;
   var quizDiv=document.getElementById('main')
   var quizOptions=document.getElementsByName('option')
-  var wrongquestions=new Array
-  var resultinfo
-  
+  var wrongquestions=new Array;
+  var resultinfo={quizName:""}
+
+
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
         <h4>QUSETION NO . ${questionNo}</h4>
@@ -214,7 +215,7 @@ var htmlQuiz = [
 function resultWindow(){
 
   localStorage.setItem("wrongquestionlist",JSON.stringify(wrongquestions))
-    
+    quizname=localStorage.setItem("quizname","HTML AND CSS")
     var percentage = Math.round(score/htmlQuiz.length*100)
     resultinfo={
       Total:htmlQuiz.length,
