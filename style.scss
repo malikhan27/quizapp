@@ -71,3 +71,30 @@ span{
         }
     }
 }
+
+.darkmodebody{
+    animation-name: darkmode;
+    animation-duration: 2s;
+    background-color: black ;
+    h1 , h3{
+        color: #4086d6 !important;
+    }
+
+    #exampleModal{
+        color: black !important;
+    }
+    #Modal2{
+        color: black !important ;
+    }
+}
+
+@keyframes darkmode { from {
+    background-color: white;
+} to { background-color: black;}
+    
+}
+
+.lightmodebody{
+    background-color: white;
+}
+

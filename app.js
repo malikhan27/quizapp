@@ -25,10 +25,10 @@ if(!moderadio.checked){
 
 var mode = localStorage.getItem("mode")
 if(mode ==="darkmode"){
-    mainbodydiv.style.backgroundColor='black'
+    mainbodydiv.className="darkmodebody"
     mainbodydiv.style.color='white'
 }else{
-    mainbodydiv.style.backgroundColor="white"
+    mainbodydiv.className="lightmodebody"
     mainbodydiv.style.color='black'
 }
 } 
@@ -150,10 +150,10 @@ window.onload= function () {
     var mode = localStorage.getItem("mode")
     if(mode ==="darkmode"){
         moderadio.checked=true
-        mainbodydiv.style.backgroundColor='black'
+        mainbodydiv.className="darkmodebody"
         mainbodydiv.style.color='white'
     }else{
-        mainbodydiv.style.backgroundColor="white"
+        mainbodydiv.className="lightmodebody"
         mainbodydiv.style.color='black'
-    }
+}
 }

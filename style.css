@@ -65,4 +65,30 @@ span {
   .header h1 {
     font-size: 15px !important;
   }
+}
+.darkmodebody {
+  animation-name: darkmode;
+  animation-duration: 2s;
+  background-color: black;
+}
+.darkmodebody h1, .darkmodebody h3 {
+  color: #4086d6 !important;
+}
+.darkmodebody #exampleModal {
+  color: black !important;
+}
+.darkmodebody #Modal2 {
+  color: black !important;
+}
+
+@keyframes darkmode {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: black;
+  }
+}
+.lightmodebody {
+  background-color: white;
 }/*# sourceMappingURL=style.css.map */
