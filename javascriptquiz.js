@@ -129,6 +129,8 @@ var jsQuiz = [
   var quizOptions=document.getElementsByName('option')
   var wrongquestions=new Array;
   var quizname
+  var resultinfo;
+  var information
 
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
@@ -215,6 +217,7 @@ var jsQuiz = [
         renderQuestion();
       }else{
         resultWindow()
+        pagetoresult()
       }
     }
   }
@@ -230,15 +233,25 @@ function resultWindow(){
   resultinfo={
     Total:jsQuiz.length,
     Usermarks:score,
-    userpercentage:percentage,
-
-    }
+    userpercentage:percentage,}
     localStorage.setItem("resultinformation",JSON.stringify(resultinfo))
 
-  
-  window.location.href="result.html"
 }
 
+information=localStorage.getItem("information")
+    information=JSON.parse(information)
 
-window.onload=quizattendancecheck()
+function pagetoresult(){
+  quizDiv.innerHTML=`<div class="quiz-container">
+  <p class="question">CONGRATULATIONS ${information.Name} </p>
+  <p class="question">YOU HAVE COMPLETED YOUR QUIZ</p>
+  <p><b>CHECK YOUR RESULT HERE</b></p>
+  <a href="result.html"><button class="submit-btn mt-2">CHECK YOUR RESULT</button></a>
+</div>`
+   
+
+
+}
+
+quizattendancecheck()
 renderQuestion()

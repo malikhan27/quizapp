@@ -131,7 +131,7 @@ var htmlQuiz = [
   var wrongquestions=new Array;
   var resultinfo;
   var quizname
-
+  var information
 
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
@@ -208,6 +208,9 @@ var htmlQuiz = [
         renderQuestion();
       }else{
         resultWindow()
+        pagetoresult()
+      
+       
       }
     }
   }
@@ -226,16 +229,31 @@ function resultWindow(){
       localStorage.setItem("resultinformation",JSON.stringify(resultinfo))
 
     
-    window.location.href="result.html"
+   
     
 }
 
-  quizname=localStorage.getItem("quizname")
+quizname=localStorage.getItem("quizname")
 
 function quizattendancecheck(){
   if(quizname==="HTML AND CSS"){
     window.location.href="result.html"
   }
+}
+
+information=localStorage.getItem("information")
+    information=JSON.parse(information)
+
+function pagetoresult(){
+  quizDiv.innerHTML=`<div class="quiz-container">
+  <p class="question">CONGRATULATIONS ${information.Name} </p>
+  <p class="question">YOU HAVE COMPLETED YOUR QUIZ</p>
+  <p><b>CHECK YOUR RESULT HERE</b></p>
+  <a href="result.html"><button class="submit-btn mt-2">CHECK YOUR RESULT</button></a>
+</div>`
+   
+
+
 }
 
 
@@ -248,4 +266,4 @@ var getresultinfo=localStorage.getItem("resultinformation")
 
 
 renderQuestion()
-window.onload= quizattendancecheck()
+quizattendancecheck()

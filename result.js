@@ -2,7 +2,7 @@ var resultdiv=document.getElementById('main2')
 var getresultinfo=localStorage.getItem("resultinformation")
 var quizname=localStorage.getItem("quizname")
     getresultinfo=JSON.parse(getresultinfo)
-    console.log(getresultinfo)
+    console.log(getresultinfo + quizname)
 document.getElementById('heading').classList.add("w-100","text-center","me-2")
     document.getElementById('heading').innerHTML= `<h1>${quizname} Quiz Result</h1>`
     resultdiv.innerHTML= `
@@ -39,7 +39,7 @@ function wrongQuestionswindow(){
 
   if(wrongquestionarray.length!==0){
   resultdiv.classList.add("d-none")
-  document.getElementById('heading').innerHTML= ` <h1>${getresultinfo.quizName}<br>Wrong Answers Review</h1>`
+  document.getElementById('heading').innerHTML= ` <h1>${quizname}<br>Wrong Answers Review</h1>`
   for(i=0;i<wrongquestionarray.length;i++){
    document.getElementById("list-ol").innerHTML+=`<li class="mt-3">
    <span class="question"> ${wrongquestionarray[i].wrongquestion} </span><br> <span class="wrong">
