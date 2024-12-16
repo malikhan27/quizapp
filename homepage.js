@@ -253,10 +253,7 @@ var name=localStorage.getItem("information")
 var information=JSON.parse(name)
 console.log(information) 
 
-document.getElementById("name1").innerHTML=
-`
-${information.Name}
-`
+
 document.getElementById("username").innerHTML=
 `
 ${information.Name}

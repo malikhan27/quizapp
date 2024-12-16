@@ -7,10 +7,25 @@
     <link rel="stylesheet" href="bootstrap.css">
     <title>Document</title>
 </head>
-<body>
-    <div class="d-flex gap-5 justify-content-center" style="background: rgb(13,128,183);
-    background: linear-gradient(321deg, rgba(13,128,183,0.4682247899159664) 32%, rgba(141,198,63,0.5326505602240896) 72%);">
-        <h1 class="mt-0" style="font-weight: bolder;">Quiz Applictaion </h1>
+<body id="mainbody">
+    <div>
+        <div class="d-flex header  flex-row  justify-content-between align-items-center" style="background: rgb(13,128,183);
+  background: linear-gradient(321deg, rgba(13,128,183,0.4682247899159664) 32%, rgba(63, 76, 198, 0.533) 72%);">
+            <a class="me-md-3" href="homepage.html"><img style="width: 180px; height: 80px;" src="logo.png" alt=""></a>
+            <div>
+                <h5>
+                    <span class="ms-2">LOGOUT</span><a class="ms-2" onclick="mainpage()" id="logout" style="text-decoration: none;"
+                        href="index.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </h5>
+                <div class="d-flex justify-content-center mt-3 me-2">
+                    <div class="form-check form-switch">
+                        <input id="mode" onchange=" darkmode ()" class="form-check-input" type="checkbox" role="switch"
+                            id="flexSwitchCheckDefault">
+                        <label class="form-check-label fw-bold" for="flexSwitchCheckDefault">DARK MODE</label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="heading" class="mt-2" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
         <h1 class="ms-5">JAVASCRIPT</h1>

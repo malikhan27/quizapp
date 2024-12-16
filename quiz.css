@@ -59,10 +59,11 @@ h1::first-letter{
     justify-content: left;
     align-items: center;
     padding: 10px 15px;
-    background-color: rgb(249, 249, 249);
+    background-color: rgb(255, 252, 252);
     border-radius: 6px;
     margin-bottom: 10px;
     transition: background-color 0.3s ease;
+    border: 1px solid rgba(105, 96, 96, 0.178);
 }
 
 .option:active {
@@ -79,6 +80,7 @@ h1::first-letter{
     cursor: pointer;
     font-size: 18px;
     color: #555;
+    
 }
 
 .option label:hover {
@@ -163,4 +165,35 @@ h1::first-letter{
     font-size: 30px;
     word-spacing: 4px;
     letter-spacing: 2px;
+}
+
+.darkmodebody{
+  
+   
+    background-color: rgb(17, 17, 17) ;
+    h1 , h4 , p{
+        color: #177be6 !important;
+    }
+    .quiz-container {
+        background-color: rgb(17, 17, 17);}
+
+    .main {
+            font-family: Arial, sans-serif;
+            background-color: rgb(17, 17, 17);}
+
+    .option{
+        background-color: #000000;
+        border: #043369;
+       label{
+        color: white;
+        font-weight: 700;
+       }
+
+    }   
+    .option label:hover {
+        font-weight: bolder!important ;
+        cursor: pointer;
+        font-size: 18px;
+        color: #9aa1fd;
+    }     
 }
