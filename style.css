@@ -1,6 +1,6 @@
 @font-face {
   font-family: ali;
-  src: url(Barlow_Condensed/BarlowCondensed-ExtraBold.ttf);
+  src: url(Barlow_Condensed/BarlowCondensed-Bold.ttf);
 }
 @font-face {
   font-family: ali-normal;
@@ -69,10 +69,13 @@ span {
 .darkmodebody {
   animation-name: darkmode;
   animation-duration: 2s;
-  background-color: black;
+  background-color: rgb(17, 17, 17);
 }
-.darkmodebody h1, .darkmodebody h3 {
-  color: #4086d6 !important;
+.darkmodebody h1, .darkmodebody h4 {
+  color: #177be6 !important;
+}
+.darkmodebody #typing {
+  color: #177be6 !important;
 }
 .darkmodebody #exampleModal {
   color: black !important;
@@ -86,7 +89,7 @@ span {
     background-color: white;
   }
   to {
-    background-color: black;
+    background-color: rgb(17, 17, 17);
   }
 }
 .lightmodebody {

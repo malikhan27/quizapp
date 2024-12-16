@@ -1,9 +1,10 @@
 var divelement = document.getElementById("main-div");
 console.log(divelement);
-
+var moderadio=document.getElementById("mode")
+var mainbodydiv=document.getElementById("mainbody")
 
 function windowchange() {
-  document.getElementById("logout").href="homepage.html"
+
   divelement.innerHTML = `
 
 <div class="mt-2 p-3" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
@@ -75,12 +76,18 @@ function windowchange() {
       </div>
     </div>
   </div>
+
+  <div class="w-100 d-flex justify-content-start">
+         <a href= "homepage.html ">
+         <button  class="my-4 btn" style="background-color:#043369; color:white">Back to Main</button>
+        </a>
+   </div>
  
 `;
 }
 
 function windowchangepython() {
-  document.getElementById("logout").href="homepage.html"
+ 
   divelement.innerHTML = `
 
 <div class="mt-2 p-3" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
@@ -120,12 +127,15 @@ function windowchangepython() {
       </div>
     </div>
   </div>
- 
+ <div class="w-100 d-flex justify-content-start">
+         <a href= "homepage.html ">
+         <button  class="my-4 btn" style="background-color:#043369; color:white">Back to Main</button>
+        </a>
+   </div>
 `;
 }
 
 function windowchangemodule() {
-  document.getElementById("logout").href="homepage.html"
   divelement.innerHTML = `
 
 <div class="mt-2 p-3" style="border-bottom: 1px solid rgba(116, 109, 109, 0.37);">
@@ -229,6 +239,12 @@ function windowchangemodule() {
       </div>
     </div>
   </div>
+  <div class="w-100 d-flex justify-content-start">
+         <a href= "homepage.html ">
+         <button  class="my-4 btn" style="background-color:#043369; color:white">Back to Main</button>
+        </a>
+   </div>
+   
  
 `;
 }
@@ -237,10 +253,6 @@ var name=localStorage.getItem("information")
 var information=JSON.parse(name)
 console.log(information) 
 
-document.getElementById("name").innerHTML=
-`
-${information.Name}
-`
 document.getElementById("name1").innerHTML=
 `
 ${information.Name}
@@ -254,6 +266,41 @@ function unablebackfrommainpage(){
   if(getpagelocation==="mainpage"){
   window.location.href="index.html"}
 }
+
+function mainpage(){
+  pagedirectiontomain= localStorage.setItem("location","mainpage")
+  getpagelocation=localStorage.getItem("location")
+
+}
+
+
+function modecheck(){
+  var mode = localStorage.getItem("mode")
+  if(mode ==="darkmode"){
+    moderadio.checked=true
+      mainbodydiv.className="darkmodebody"
+      mainbodydiv.style.color='white'
+  }else{
+      mainbodydiv.className="lightmodebody"
+      mainbodydiv.style.color='black'
+  }
+
+}
+
+function darkmode (){
+  if(!moderadio.checked){
+      localStorage.setItem("mode","lightmode")
+  }else{
+      localStorage.setItem("mode","darkmode")
+  }
+  modecheck()
+ 
+  } 
+
+
+  window.onload= modecheck()
+
+
 
 
 window.onload= unablebackfrommainpage()

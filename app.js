@@ -35,11 +35,7 @@ if(mode ==="darkmode"){
 
 
 
-function mainpage(){
-    pagedirectiontomain= localStorage.setItem("location","mainpage")
-    getpagelocation=localStorage.getItem("location")
 
-}
  
 
 
@@ -144,7 +140,7 @@ function logintowindow(){
     }
 }
 
-mainpage()
+
 
 window.onload= function () {
     var mode = localStorage.getItem("mode")
@@ -157,3 +153,12 @@ window.onload= function () {
         mainbodydiv.style.color='black'
 }
 }
+
+
+function stayonhomepage(){ 
+    var getpagelocation=localStorage.getItem("location")
+    if(getpagelocation==="anypage"){
+    window.location.href="homepage.html"}
+  }
+
+  stayonhomepage()

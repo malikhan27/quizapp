@@ -89,3 +89,62 @@ button.accordion-button.collapsed{
             }
         }
     }
+
+
+    .darkmodebody{
+       
+        background-color: rgb(17, 17, 17) ;
+        background-color: rgb(17, 17, 17) ;
+        h1 , h4{
+            color: #177be6 !important;
+        }
+    
+
+        p{
+            color:  #177be6  !important;
+        }
+
+        .course:hover{
+            h5{
+                font-weight: bolder;
+            }
+            cursor: pointer;
+            background: rgb(5, 5, 5);
+            background: linear-gradient(321deg, rgb(0, 0, 0) 32%,rgba(38, 178, 243, 0.199)  100%);;
+            p{font-weight: 600;
+            }
+        }
+
+        .accordion-item {
+            color: var(--bs-accordion-color);
+            background-color: rgb(12, 12, 12);
+            border: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
+    }
+
+    button.accordion-button.collapsed {
+        background: rgb(12 12 12);
+        background: linear-gradient(321deg, 321deg, rgba(110, 177, 255, 0.356) 25%, rgba(255, 255, 255, 1) 100%);
+        color: #177be6  ;
+        border-bottom: 1px solid #0a0a0a69;
+        padding: 20px 10px;
+    }
+
+    .accordion-button:not(.collapsed) {
+        color:   #177be6  ;
+        background: rgb(12,12,12);
+        background: linear-gradient(321deg,rgba(110, 177, 255, 0.356) 25%, rgb(0, 0, 0) 100% )
+         ;
+        box-shadow: inset 0 calc(-1* var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+    }
+    .table{
+    --bs-table-color:  #75c2f5  ;
+    --bs-table-bg: #000;
+    }
+
+}
+  
+    
+    .lightmodebody{
+        background-color: white;
+    }
+    
