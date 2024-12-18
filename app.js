@@ -1,7 +1,8 @@
 var signupEmail=document.getElementById('Email')
 var signupPassword=document.getElementById('Password')
 var signupusername=document.getElementById('name')
-
+var emailregex= /^\S+@\S+\.\S+$/;
+var nameregex=/^[a-zA-Z]+$/;
 var email= ""
 var password=""
 var name=""
@@ -55,9 +56,9 @@ function signupAccount(){
 
     localStorage.setItem("information",userinfo)
 
-    if(signupusername.value.trim()!==""){
-    if(email.trim()!==""){
-        if(password.trim()!==""){
+    if(nameregex.test(name)){
+    if(emailregex.test(signupEmail.value)){
+        if(password!==""){
             Swal.fire({
                 icon: "success",
                 title: "Congrats",
@@ -75,14 +76,14 @@ function signupAccount(){
         Swal.fire({
             icon: "error",
             title: "ERROR",
-            text: "Enter Your Email"
+            text: "Enter a valid Email"
           });
 }
 }else{
         Swal.fire({
             icon: "error",
             title: "ERROR",
-            text: "Enter Your name"
+            text: "Enter a valid name"
           });
     }
    

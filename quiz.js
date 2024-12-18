@@ -219,29 +219,38 @@ var htmlQuiz = [
 
 
 function resultWindow(){
-  localStorage.setItem("quizname","HTML AND CSS")
-  localStorage.setItem("wrongquestionlist",JSON.stringify(wrongquestions))
+  localStorage.setItem("wrongquestionlisthtml",JSON.stringify(wrongquestions))
     quizname=localStorage.setItem("quizname","HTML AND CSS")
     var percentage = Math.round(score/htmlQuiz.length*100)
     resultinfo={
+      quizname:"HTML & CSS",
       Total:htmlQuiz.length,
       Usermarks:score,
       userpercentage:percentage,
       }
-      localStorage.setItem("resultinformation",JSON.stringify(resultinfo))
+      localStorage.setItem("htmlresultinformation",JSON.stringify(resultinfo))
 
     
    
     
 }
 
-quizname=localStorage.getItem("quizname")
+quizname=localStorage.getItem("requestquiz")
+attemptquiz=localStorage.getItem("htmlresultinformation")
+attemptquiz= JSON.parse(attemptquiz)
 
-function quizattendancecheck(){
-  if(quizname==="HTML AND CSS"){
-    window.location.href="result.html"
+function checkattempt(){
+  if(attemptquiz){
+    if(attemptquiz.quizname===quizname){
+      window.location.href="result.html"
+
+    }
   }
+
+
 }
+
+checkattempt()
 
 information=localStorage.getItem("information")
     information=JSON.parse(information)
@@ -268,7 +277,7 @@ var getresultinfo=localStorage.getItem("resultinformation")
 
 
 renderQuestion()
-quizattendancecheck()
+
 
 function modecheck(){
   var mode = localStorage.getItem("mode")
@@ -293,5 +302,17 @@ function darkmode (){
  
   } 
 
+  function mainpage(){
+    pagedirectiontomain= localStorage.setItem("location","mainpage")
+    getpagelocation=localStorage.getItem("location")
+  
+  }
+
+  function unablebackfrommainpage(){ 
+    var getpagelocation=localStorage.getItem("location")
+    if(getpagelocation==="mainpage"){
+    window.location.href="index.html"}
+  }
+  unablebackfrommainpage()
 
   window.onload= modecheck()

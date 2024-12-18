@@ -130,10 +130,10 @@ var jsQuiz = [
   var wrongquestions=new Array;
   var quizname
   var resultinfo;
-  var information
+  var information;
   var moderadio=document.getElementById("mode")
 var mainbodydiv=document.getElementById("mainbody")
-
+var attemptquiz;
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
         <h4>QUSETION NO . ${questionNo}</h4>
@@ -165,14 +165,23 @@ var mainbodydiv=document.getElementById("mainbody")
 
   
 
-  quizname=localStorage.getItem("quizname")
+  quizname=localStorage.getItem("requestquiz")
+  attemptquiz=localStorage.getItem("javaresultinformation")
+  attemptquiz= JSON.parse(attemptquiz)
+  
 
-  function quizattendancecheck(){
-    if(quizname==="JAVASCRIPT"){
-      window.location.href="result.html"
+  function checkattempt(){
+    if(attemptquiz){
+      if(attemptquiz.quizname===quizname){
+        window.location.href="result.html"
+  
+      }
     }
+  
+  
   }
-
+  
+  checkattempt()
 
   function deSelect() {
     for (var i = 0; i < quizOptions.length; i++) {
@@ -228,17 +237,17 @@ var mainbodydiv=document.getElementById("mainbody")
 
 
 function resultWindow(){
-  
-  localStorage.setItem("quizname","JAVASCRIPT")
-  localStorage.setItem("wrongquestionlist",JSON.stringify(wrongquestions))
+  localStorage.setItem("wrongquestionlistjava",JSON.stringify(wrongquestions))
   var percentage = Math.round(score/jsQuiz.length*100)
   resultinfo={
+    quizname:"Javascript",
     Total:jsQuiz.length,
     Usermarks:score,
     userpercentage:percentage,}
-    localStorage.setItem("resultinformation",JSON.stringify(resultinfo))
+  
+    localStorage.setItem("javaresultinformation",JSON.stringify(resultinfo))
+  }
 
-}
 
 information=localStorage.getItem("information")
     information=JSON.parse(information)
@@ -278,11 +287,23 @@ function darkmode (){
  
   } 
 
+  function mainpage(){
+    pagedirectiontomain= localStorage.setItem("location","mainpage")
+    getpagelocation=localStorage.getItem("location")
+  
+  }
+
+  function unablebackfrommainpage(){ 
+    var getpagelocation=localStorage.getItem("location")
+    if(getpagelocation==="mainpage"){
+    window.location.href="index.html"}
+  }
+  unablebackfrommainpage()
 
 window.onload= modecheck()
 
 
 
 
-quizattendancecheck()
+
 renderQuestion()

@@ -133,7 +133,7 @@ var pythonQuiz = [
   var information;
   var moderadio=document.getElementById("mode")
   var mainbodydiv=document.getElementById("mainbody")
-
+  var attemptquiz
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
         <h4>QUSETION NO . ${questionNo}</h4>
@@ -163,13 +163,22 @@ var pythonQuiz = [
     </div>`
   }
 
-  quizname=localStorage.getItem("quizname")
+quizname=localStorage.getItem("requestquiz")
+attemptquiz=localStorage.getItem("pythonresultinformation")
+attemptquiz=JSON.parse(attemptquiz)
 
-  function quizattendancecheck(){
-    if(quizname==="PYTHON"){
+function checkattempt(){
+  if(attemptquiz){
+    if(attemptquiz.quizname===quizname){
       window.location.href="result.html"
+
     }
   }
+
+
+}
+
+checkattempt()
 
   function deSelect() {
     for (var i = 0; i < quizOptions.length; i++) {
@@ -226,21 +235,22 @@ var pythonQuiz = [
 
 function resultWindow(){
   
-  localStorage.setItem("quizname","PYTHON")
-  localStorage.setItem("wrongquestionlist",JSON.stringify(wrongquestions))
+  
+  localStorage.setItem("wrongquestionlistpython",JSON.stringify(wrongquestions))
   var percentage = Math.round(score/pythonQuiz.length*100)
   resultinfo={
+    quizname:"Python",
     Total:pythonQuiz.length,
     Usermarks:score,
     userpercentage:percentage,
     }
-    localStorage.setItem("resultinformation",JSON.stringify(resultinfo))
+    localStorage.setItem("pythonresultinformation",JSON.stringify(resultinfo))
 
 
 }
 
 information=localStorage.getItem("information")
-    information=JSON.parse(information)
+information=JSON.parse(information)
 
 function pagetoresult(){
   quizDiv.innerHTML=`<div class="quiz-container">
@@ -277,9 +287,20 @@ function darkmode (){
  
   } 
 
+  function mainpage(){
+    pagedirectiontomain= localStorage.setItem("location","mainpage")
+    getpagelocation=localStorage.getItem("location")
+  
+  }
+
+  function unablebackfrommainpage(){ 
+    var getpagelocation=localStorage.getItem("location")
+    if(getpagelocation==="mainpage"){
+    window.location.href="index.html"}
+  }
+  unablebackfrommainpage()
 
 window.onload= modecheck()
 
 
 renderQuestion()
-window.onload= quizattendancecheck()

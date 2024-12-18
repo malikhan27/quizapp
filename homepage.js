@@ -2,6 +2,7 @@ var divelement = document.getElementById("main-div");
 console.log(divelement);
 var moderadio=document.getElementById("mode")
 var mainbodydiv=document.getElementById("mainbody")
+var quizname
 
 function windowchange() {
 
@@ -14,7 +15,7 @@ function windowchange() {
 <div class="accordion w-75 accordion-flush mt-4" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+      <button onclick="getthetext()" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
         HTML & CSS
       </button>
     </h2>
@@ -40,13 +41,13 @@ function windowchange() {
      </tr>
     </tbody>
    </table>
-   <a class="btn" style="background-color: #043369 !important; color:white !important" href="quiz.html">Join Now</a>
+   <a class="btn" onclick=" redirecttoresult()" style="background-color: #043369 !important; color:white !important" href="quiz.html">Join Now</a>
       </div>
     </div>
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+      <button onclick="getthetext()" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
         Javascript
       </button>
     </h2>
@@ -72,7 +73,7 @@ function windowchange() {
      </tr>
     </tbody>
    </table>
-   <a class="btn" style="background-color: #043369 !important; color:white !important" href="javascriptquiz.html">Join Now</a>
+   <a class="btn" onclick=" redirecttoresult()" style="background-color: #043369 !important; color:white !important" href="javascriptquiz.html">Join Now</a>
       </div>
     </div>
   </div>
@@ -97,7 +98,7 @@ function windowchangepython() {
 <div class="accordion w-75 accordion-flush mt-4" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+      <button onclick="getthetext()" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
        Python
       </button>
     </h2>
@@ -123,7 +124,7 @@ function windowchangepython() {
      </tr>
     </tbody>
    </table>
-   <a class="btn" style="background-color: #043369 !important; color:white !important" href="python.html">Join Now</a>
+   <a class="btn" onclick=" redirecttoresult()" style="background-color: #043369 !important; color:white !important" href="python.html">Join Now</a>
       </div>
     </div>
   </div>
@@ -145,7 +146,7 @@ function windowchangemodule() {
 <div class="accordion w-75 accordion-flush mt-4" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+      <button onclick="getthetext()" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
         HTML & CSS
       </button>
     </h2>
@@ -171,13 +172,13 @@ function windowchangemodule() {
      </tr>
     </tbody>
    </table>
-   <a class="btn" style="background-color: #043369 !important; color:white !important" href="quiz.html">Join Now</a>
+   <a class="btn" onclick=" redirecttoresult()" style="background-color: #043369 !important; color:white !important" href="quiz.html">Join Now</a>
       </div>
     </div>
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+      <button onclick="getthetext()" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
         Javascript
       </button>
     </h2>
@@ -203,13 +204,13 @@ function windowchangemodule() {
      </tr>
     </tbody>
    </table>
-   <a class="btn" style="background-color: #043369 !important; color:white !important" href="javascriptquiz.html">Join Now</a>
+   <a class="btn" onclick=" redirecttoresult()" style="background-color: #043369 !important; color:white !important" href="javascriptquiz.html">Join Now</a>
       </div>
     </div>
   </div>
    <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapseOne">
+      <button onclick="getthetext()" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapseOne">
         PYTHON
       </button>
     </h2>
@@ -235,7 +236,7 @@ function windowchangemodule() {
      </tr>
     </tbody>
    </table>
-   <a class="btn" style="background-color: #043369 !important; color:white !important" href="python.html">Join Now</a>
+   <a class="btn" onclick=" redirecttoresult()" style="background-color: #043369 !important; color:white !important" href="python.html">Join Now</a>
       </div>
     </div>
   </div>
@@ -297,6 +298,15 @@ function darkmode (){
 
   window.onload= modecheck()
 
+function getthetext(){ 
+quizname = event.target.innerText
+console.log(quizname)
+}
+
+
+function redirecttoresult(){
+  localStorage.setItem("requestquiz",quizname)
+}
 
 
 

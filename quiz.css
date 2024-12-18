@@ -195,5 +195,23 @@ h1::first-letter{
         cursor: pointer;
         font-size: 18px;
         color: #9aa1fd;
-    }     
+    }    
+
+    .question{
+        color: #177be6 !important;
+    }
+    
+    .passed{
+        color: rgb(5, 199, 5) !important;
+        font-weight: bolder;
+    }
+    .failed{
+        color: rgb(226, 10, 10) !important;
+        font-weight: bolder;
+    }
+
+    .results-container{
+        background-color: rgb(17, 17, 17);
+        border-color: #4c7aaf;
+    }
 }
