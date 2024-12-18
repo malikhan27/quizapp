@@ -131,6 +131,8 @@ var jsQuiz = [
   var quizname
   var resultinfo;
   var information
+  var moderadio=document.getElementById("mode")
+var mainbodydiv=document.getElementById("mainbody")
 
   function renderQuestion(){
     quizDiv.innerHTML=`<div class="quiz-container">
@@ -252,6 +254,35 @@ function pagetoresult(){
 
 
 }
+
+function modecheck(){
+  var mode = localStorage.getItem("mode")
+  if(mode ==="darkmode"){
+    moderadio.checked=true
+      mainbodydiv.className="darkmodebody"
+      mainbodydiv.style.color='white'
+  }else{
+      mainbodydiv.className="lightmodebody"
+      mainbodydiv.style.color='black'
+  }
+
+}
+
+function darkmode (){
+  if(!moderadio.checked){
+      localStorage.setItem("mode","lightmode")
+  }else{
+      localStorage.setItem("mode","darkmode")
+  }
+  modecheck()
+ 
+  } 
+
+
+window.onload= modecheck()
+
+
+
 
 quizattendancecheck()
 renderQuestion()
